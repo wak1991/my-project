@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+        <div class="row">
+    {% for product in products %}
+            <div class="col-md-6">
+                <article class="post post-grid">
+                    <div class="post-thumb">
+                        <a href="/product/{{ product.slug }}"><img src="/assets/uploads/{{ product.img }}" alt=""></a>
+
+                        <a href="/product/{{ product.slug }}" class="post-thumb-overlay text-center">
+                            <div class="text-uppercase text-center">Подробнее</div>
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <header class="entry-header text-center text-uppercase">
+                            <h6><a href="/category/{{ category.slug }}"> {{ category.name }}</a></h6>
+                            <h1 class="entry-title"><a href="/product/{{ product.slug }}">{{ product.name }}</a></h1>
+                        </header>
+                        <div class="entry-content">
+                            {{ product.description| raw }}
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+    {% endfor %}
+        </div>
+{% endblock %}

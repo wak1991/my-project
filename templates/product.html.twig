@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+        <article class="post">
+            <div class="post-thumb">
+                <img src="/assets/uploads/{{ product.img }}" alt="">
+            </div>
+            <div class="post-content">
+                <header class="entry-header text-center text-uppercase">
+                    <h6><a href="/category/{{ categorySlug }}">{{ categoryName }}</a></h6>
+                    <h1 class="entry-title">{{ product.name }}</h1>
+                    <h6>Цена: {{ product.price }}</h6>
+                </header>
+                <div class="entry-content">
+                    {{ product.description|raw }}
+                </div>
+            </div>
+        </article>
+{% endblock %}
